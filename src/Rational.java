@@ -16,11 +16,7 @@ public class Rational {
         String output = r.toString();    //r.show();
 
        // System.out.println(output);
-        if (n1>n2) {
             System.out.println(r);
-        }
-        else
-            System.out.println(0);
     }
 
     private static int computeGcd(int a, int b){
@@ -48,7 +44,13 @@ public class Rational {
         int numerator = n1 * d2 - n2 * d1;
         int denominator = d1 * d2;
         int pgcd = computeGcd(numerator,denominator);
-        return new Rational(numerator/pgcd, denominator/pgcd);
+
+        if(numerator * denominator < 0){
+            return new Rational(-Math.abs(numerator/pgcd), Math.abs(denominator/pgcd));
+        }
+        else {
+            return new Rational(numerator / pgcd, denominator / pgcd);
+        }
     }
 
 
@@ -57,4 +59,8 @@ public class Rational {
         this.numerator = numerator;
         this.denominator = denominator;
     }
+
+
+
+
 }
