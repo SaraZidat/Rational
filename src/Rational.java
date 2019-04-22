@@ -16,7 +16,11 @@ public class Rational {
         String output = r.toString();    //r.show();
 
        // System.out.println(output);
-        System.out.println(r);
+        if (n1>n2) {
+            System.out.println(r);
+        }
+        else
+            System.out.println(0);
     }
 
     private static int computeGcd(int a, int b){
