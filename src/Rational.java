@@ -6,9 +6,9 @@ public class Rational {
 
         //Rational.toString();
         int n1 = Integer.parseInt(args[0]);
-        int d1 = Integer.parseInt(args[1]);
-        int n2 = Integer.parseInt(args[2]);
-        int d2 = Integer.parseInt(args[3]);
+        int d1 = Integer.parseInt(args[2]);
+        int n2 = Integer.parseInt(args[3]);
+        int d2 = Integer.parseInt(args[5]);
         Rational r = add(new Rational(n1, d1), new Rational(n2, d2));
 
         //String result = Integer.toString(r.numerator) + "/" + Integer.toString(r.denominator);
