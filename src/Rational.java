@@ -19,6 +19,13 @@ public class Rational {
         System.out.println(r);
     }
 
+    private static int computeGcd(int a, int b){
+        if (b == 0){
+            return a;
+        }
+        return computeGcd(b, a % b);
+    }
+
     @Override
     public String toString(){
         String result = Integer.toString(numerator) + "/" + Integer.toString(denominator);
@@ -36,8 +43,8 @@ public class Rational {
         int d2 = r2.denominator;
         int numerator = n1 * d2 + n2 * d1;
         int denominator = d1 * d2;
-
-        return new Rational(numerator, denominator);
+        int pgcd = computeGcd(numerator,denominator);
+        return new Rational(numerator/pgcd, denominator/pgcd);
     }
 
 
